@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Data" representedClassName=".Data" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weathertype" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherType" inverseName="data" inverseEntity="WeatherType" syncable="YES"/>
+    </entity>
+    <entity name="ImagePlot" representedClassName=".ImagePlot" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="thumbnailImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sensor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sensor" inverseName="images" inverseEntity="Sensor" syncable="YES"/>
+    </entity>
+    <entity name="Sensor" representedClassName=".Sensor" syncable="YES" codeGenerationType="class">
+        <attribute name="sensorId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImagePlot" inverseName="sensor" inverseEntity="ImagePlot" syncable="YES"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherType" inverseName="sensor" inverseEntity="WeatherType" syncable="YES"/>
+    </entity>
+    <entity name="WeatherType" representedClassName=".Type" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pictoImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Data" inverseName="weathertype" inverseEntity="Data" syncable="YES"/>
+        <relationship name="sensor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sensor" inverseName="weather" inverseEntity="Sensor" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Sensor" positionX="-63" positionY="-81" width="128" height="88"/>
+        <element name="ImagePlot" positionX="79" positionY="243" width="128" height="88"/>
+        <element name="WeatherType" positionX="378" positionY="-63" width="128" height="103"/>
+        <element name="Data" positionX="376" positionY="234" width="128" height="88"/>
+    </elements>
 </model>
