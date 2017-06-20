@@ -2,30 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Type+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Type+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Sensor+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Sensor+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:ImagePlot+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:ImagePlot+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Data+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Data+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:FarmingManager.xcodeproj">
    </FileRef>
    <FileRef

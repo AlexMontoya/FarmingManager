@@ -55,9 +55,19 @@ class Sensores: NSObject {
 }
 
 
-class Image: NSObject {
+class Feed: NSObject {
     
     var thumbnailImageName: String?
+    
+    var humidityUnit: String?
+    var humidityData: NSNumber?
+    
+    var windUnit: String?
+    var windData: NSNumber?
+    
+    var tempUnit: String?
+    var tempData: NSNumber?
+    
     var date: NSDate?
     
     var sensores: Sensores?

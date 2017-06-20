@@ -7,24 +7,57 @@
 //
 
 import UIKit
+import Alamofire
 
 class SensorListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     
-    var images: [Image] = {
+    var feeds: [Feed] = {
      
-        var dSchool1 = Image()
+        var dSchool1 = Feed()
         dSchool1.thumbnailImageName = "2:06-perpendiculaire"
+        dSchool1.humidityUnit = "%"
+        dSchool1.humidityData = 10
+        dSchool1.windUnit = "km/h"
+        dSchool1.windData = 10
+        dSchool1.tempUnit = "°C"
+        dSchool1.tempData = 10
         
-        var dSchool2 = Image()
+        
+        
+        var dSchool2 = Feed()
         dSchool2.thumbnailImageName = "2:06-sud"
+        dSchool2.humidityUnit = "%"
+        dSchool2.humidityData = 20
+        dSchool2.windUnit = "km/h"
+        dSchool2.windData = 20
+        dSchool2.tempUnit = "°C"
+        dSchool2.tempData = 20
         
         return [dSchool1, dSchool2]
         
     }()
     
+    func fetchImages() {
+    
+        let user = "ceres"
+        let password = "Tester007!"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        
+        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images", headers: headers)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchImages()
         
         navigationItem.title = "My Sensors"
         navigationController?.navigationBar.isTranslucent = false
@@ -62,13 +95,13 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
     
     //Here the number of rows that i could integrate data
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return feeds.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! ImageSensorCell
-            cell.image = images[indexPath.item]
+            cell.feed = feeds[indexPath.item]
         return cell
 
     }

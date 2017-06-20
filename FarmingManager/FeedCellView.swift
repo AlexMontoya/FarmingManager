@@ -28,13 +28,40 @@ class BaseCell: UICollectionViewCell {
 
     class ImageSensorCell: BaseCell {
     
-    var image: Image? {
+    var feed: Feed? {
         didSet {
             
-            thumbnailImageView.image = UIImage(named: (image?.thumbnailImageName)!)
+            thumbnailImageView.image = UIImage(named: (feed?.thumbnailImageName)!)
+            
+        
+        let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            
+        if let humidityInfo = feed?.humidityData, let humidityPerc = feed?.humidityUnit {
+            
+        let humidityInformation = "\(numberFormatter.string(from: humidityInfo)!) \(humidityPerc)"
+            humiditySubLabel.text = humidityInformation
+        
+        }
+        
+        if let windInfo = feed?.windData, let windSpeed = feed?.windUnit {
+                
+            let windInformation = "\(numberFormatter.string(from: windInfo)!) \(windSpeed)"
+            windSubLabel.text = windInformation
+                
+            }
+            
+        if let tempInfo = feed?.tempData, let tempCent = feed?.tempUnit {
+                
+            let tempInformation = "\(numberFormatter.string(from:tempInfo)!) \(tempCent)"
+            tempSubLabel.text = tempInformation
+            
+        }
+       
         }
     }
-        
+ 
+
     
     
     let thumbnailImageView: UIImageView = {
