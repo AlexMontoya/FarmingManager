@@ -13,7 +13,7 @@
 		B8C0BD5E1EF952D10039C664 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C0BD5D1EF952D10039C664 /* ProfileController.swift */; };
 		B8C2CD961EE4B67700DE0778 /* FeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CD951EE4B67700DE0778 /* FeedCellView.swift */; };
 		B8C2CD9A1EE4E58700DE0778 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CD991EE4E58700DE0778 /* MenuBar.swift */; };
-		B8C611831EDF091F000485D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C611821EDF091F000485D4 /* Extensions.swift */; };
+		B8C611831EDF091F000485D4 /* UIView+CustomConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C611821EDF091F000485D4 /* UIView+CustomConstraint.swift */; };
 		B8C6118B1EDF1EB5000485D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C6118A1EDF1EB5000485D4 /* Assets.xcassets */; };
 		B8D7CF571EDCBF2C003A7687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF561EDCBF2C003A7687 /* AppDelegate.swift */; };
 		B8D7CF591EDCBF2C003A7687 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF581EDCBF2C003A7687 /* HomeController.swift */; };
@@ -24,6 +24,7 @@
 		B8D7CF7A1EDCBF2D003A7687 /* FarmingManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF791EDCBF2D003A7687 /* FarmingManagerUITests.swift */; };
 		B8D7CF881EDCC4CA003A7687 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF871EDCC4CA003A7687 /* CustomTabBarController.swift */; };
 		B8D7CF8A1EDCDD88003A7687 /* FeedListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF891EDCDD88003A7687 /* FeedListController.swift */; };
+		B8DA106A1EFAF4FB00C3AE2F /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */; };
 		B8DEA5461EF01A1C008574A8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEA5451EF01A1B008574A8 /* ImageCell.swift */; };
 		B8DEA5481EF03269008574A8 /* WeatherCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEA5471EF03269008574A8 /* WeatherCellView.swift */; };
 		B8DEA54A1EF03921008574A8 /* WeatherHelperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEA5491EF03921008574A8 /* WeatherHelperController.swift */; };
@@ -56,7 +57,7 @@
 		B8C0BD5D1EF952D10039C664 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		B8C2CD951EE4B67700DE0778 /* FeedCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCellView.swift; sourceTree = "<group>"; };
 		B8C2CD991EE4E58700DE0778 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
-		B8C611821EDF091F000485D4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B8C611821EDF091F000485D4 /* UIView+CustomConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CustomConstraint.swift"; sourceTree = "<group>"; };
 		B8C6118A1EDF1EB5000485D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8D7CF531EDCBF2C003A7687 /* FarmingManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmingManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D7CF561EDCBF2C003A7687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		B8D7CF7B1EDCBF2D003A7687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D7CF871EDCC4CA003A7687 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		B8D7CF891EDCDD88003A7687 /* FeedListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListController.swift; sourceTree = "<group>"; };
+		B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		B8DEA5451EF01A1B008574A8 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		B8DEA5471EF03269008574A8 /* WeatherCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCellView.swift; sourceTree = "<group>"; };
 		B8DEA5491EF03921008574A8 /* WeatherHelperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelperController.swift; sourceTree = "<group>"; };
@@ -187,7 +189,8 @@
 		B8D7CF551EDCBF2C003A7687 /* FarmingManager */ = {
 			isa = PBXGroup;
 			children = (
-				B8C611821EDF091F000485D4 /* Extensions.swift */,
+				B8C611821EDF091F000485D4 /* UIView+CustomConstraint.swift */,
+				B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */,
 				B8C6118C1EDF3427000485D4 /* Model */,
 				B8C6118A1EDF1EB5000485D4 /* Assets.xcassets */,
 				B8D7CF561EDCBF2C003A7687 /* AppDelegate.swift */,
@@ -411,7 +414,7 @@
 				B8D7CF8A1EDCDD88003A7687 /* FeedListController.swift in Sources */,
 				B8C2CD961EE4B67700DE0778 /* FeedCellView.swift in Sources */,
 				B8388B7A1EE1DA2500844472 /* SensorDataController.swift in Sources */,
-				B8C611831EDF091F000485D4 /* Extensions.swift in Sources */,
+				B8C611831EDF091F000485D4 /* UIView+CustomConstraint.swift in Sources */,
 				B8DEA54A1EF03921008574A8 /* WeatherHelperController.swift in Sources */,
 				B8C0BD5E1EF952D10039C664 /* ProfileController.swift in Sources */,
 				B8DEA5481EF03269008574A8 /* WeatherCellView.swift in Sources */,
@@ -423,6 +426,7 @@
 				B8D7CF881EDCC4CA003A7687 /* CustomTabBarController.swift in Sources */,
 				B8D7CF571EDCBF2C003A7687 /* AppDelegate.swift in Sources */,
 				B8EC559D1EE65776005EDF50 /* Sensor.swift in Sources */,
+				B8DA106A1EFAF4FB00C3AE2F /* UIColor+rgb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

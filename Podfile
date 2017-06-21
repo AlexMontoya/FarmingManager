@@ -5,6 +5,7 @@ target 'FarmingManager' do
   use_frameworks!
   pod 'Mapbox-iOS-SDK', '~> 3.5'
   pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
 
 end
 

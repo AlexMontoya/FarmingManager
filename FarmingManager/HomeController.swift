@@ -20,6 +20,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             titleLabel.text = "My Fields"
             titleLabel.textColor = UIColor.white
             titleLabel.font = UIFont.systemFont(ofSize: 18)
+            titleLabel.textAlignment = .center
             navigationItem.titleView = titleLabel
         
         let mapView = MGLMapView(frame: view.bounds)
@@ -29,12 +30,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
         view.addSubview(mapView)
         
-        setupNavBarButtons()
+        //setupNavBarButtons()
         
     }
     
  
-    func setupNavBarButtons() {
+    /*func setupNavBarButtons() {
         
         let searchImage = UIImage(named: "searchimage")?.withRenderingMode(.alwaysOriginal)
         let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
@@ -62,7 +63,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+    }*/
 
 
  }

@@ -34,17 +34,17 @@ class BaseCell: UICollectionViewCell {
             thumbnailImageView.image = UIImage(named: (feed?.thumbnailImageName)!)
             
         
-        let numberFormatter = NumberFormatter()
+            let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             
-        if let humidityInfo = feed?.humidityData, let humidityPerc = feed?.humidityUnit {
+            if let humidityInfo = feed?.humidityData, let humidityPerc = feed?.humidityUnit {
             
-        let humidityInformation = "\(numberFormatter.string(from: humidityInfo)!) \(humidityPerc)"
+                let humidityInformation = "\(numberFormatter.string(from: humidityInfo)!) \(humidityPerc)"
             humiditySubLabel.text = humidityInformation
         
         }
         
-        if let windInfo = feed?.windData, let windSpeed = feed?.windUnit {
+            if let windInfo = feed?.windData, let windSpeed = feed?.windUnit {
                 
             let windInformation = "\(numberFormatter.string(from: windInfo)!) \(windSpeed)"
             windSubLabel.text = windInformation
@@ -133,6 +133,7 @@ class BaseCell: UICollectionViewCell {
     }()
     
     override func setupViews() {
+        
         
         addSubview(thumbnailImageView)
         addSubview(separatorView)

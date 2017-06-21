@@ -25,7 +25,7 @@ class CustomTabBarController: UITabBarController {
         navController.tabBarItem.title = "My Sensors"
         //navController.tabBarItem.image = UIImage(named: "sensor")
         
-        let profile = SensorListController(collectionViewLayout: layout)
+        let profile = ProfileController(collectionViewLayout: layout)
         let profileNavController = UINavigationController(rootViewController: profile)
         profileNavController.tabBarItem.title = "My Profile"
         

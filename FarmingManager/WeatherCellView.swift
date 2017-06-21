@@ -29,6 +29,7 @@ class WeatherCell: Weather, UICollectionViewDataSource, UICollectionViewDelegate
     override func setupViews() {
         super.setupViews()
         
+        
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|-10-[v0]|", views: collectionView)

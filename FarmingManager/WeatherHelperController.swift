@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Alamofire
 
 import UIKit
 
@@ -39,6 +40,7 @@ extension WeatherCell {
             }
         }
     }
+    
     
     func setupData() {
         

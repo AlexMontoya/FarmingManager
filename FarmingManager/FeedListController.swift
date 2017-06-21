@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SensorListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -38,7 +39,10 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         
     }()
     
+    //var feeds: [Feed]?
+    
     func fetchImages() {
+        
     
         let user = "ceres"
         let password = "Tester007!"
@@ -46,11 +50,44 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         let base64Credentials = credentialData.base64EncodedString(options: [])
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         
-        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images", headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
-        }
         
+       let task = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images", headers: headers)
+            .responseJSON { response in
+                
+                if let json = response.result.value {
+                    
+                    for dictionary in json as! [[String: AnyObject]]
+                    {
+                        print(dictionary["id"]!)
+                   
+                    }
+                }
+            }
+            task.resume()
+    }
+    
+    func fetchWeather() {
+        
+        let user = "ceres"
+        let password = "Tester007!"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        
+        
+        let task2 = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers)
+            .responseJSON { response in
+                
+                if let json = response.result.value {
+                    
+                    for weather in json as! [[String: AnyObject]]
+                    {
+                        print(weather["values"]!)
+                        
+                    }
+                }
+            }
+            task2.resume()
         
     }
     
@@ -58,8 +95,14 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         super.viewDidLoad()
         
         fetchImages()
+        fetchWeather()
         
-        navigationItem.title = "My Sensors"
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "My Sensors"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        navigationItem.titleView = titleLabel
+        
         navigationController?.navigationBar.isTranslucent = false
         
         /*let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
