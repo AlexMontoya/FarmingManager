@@ -23,11 +23,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             titleLabel.textAlignment = .center
             navigationItem.titleView = titleLabel
         
-        let mapView = MGLMapView(frame: view.bounds)
+        let mapView = MGLMapView(frame: view.bounds, styleURL: MGLStyle.satelliteStyleURL(withVersion: 9))
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Set the map’s center coordinate and zoom level.
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 48.552216, longitude: 3.846474), zoomLevel: 18, animated: false)
         view.addSubview(mapView)
         
         //setupNavBarButtons()

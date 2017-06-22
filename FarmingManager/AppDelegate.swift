@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         //let layout = UICollectionViewFlowLayout()
-        //window?.rootViewController = UINavigationController(rootViewController: PictureController(collectionViewLayout: layout))
+        //window?.rootViewController = UINavigationController(rootViewController: SensorDataController(collectionViewLayout: layout))
         
         self.window?.rootViewController = CustomTabBarController()
         
         UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 80, green: 167, blue: 194)
-    
+        UINavigationBar.appearance().tintColor = UIColor.white
 
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)

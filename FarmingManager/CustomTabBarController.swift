@@ -23,13 +23,14 @@ class CustomTabBarController: UITabBarController {
         let vc = SensorListController(collectionViewLayout: layout)
         let navController = UINavigationController(rootViewController: vc)
         navController.tabBarItem.title = "My Sensors"
-        //navController.tabBarItem.image = UIImage(named: "sensor")
+        //navController.tabBarItem.image = UIImage(named: "sensors")
         
         let profile = ProfileController(collectionViewLayout: layout)
         let profileNavController = UINavigationController(rootViewController: profile)
         profileNavController.tabBarItem.title = "My Profile"
+        //profileNavController.tabBarItem.image = UIImage(named: "profile")
         
-    viewControllers = [homeNavController, navController, profileNavController /*createMultipleNavControllerWithTitle(title: "My sensors")*/]
+    viewControllers = [homeNavController, navController, profileNavController]
         
         
     }

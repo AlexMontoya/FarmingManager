@@ -15,7 +15,7 @@ class WeatherCell: Weather, UICollectionViewDataSource, UICollectionViewDelegate
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -32,7 +32,7 @@ class WeatherCell: Weather, UICollectionViewDataSource, UICollectionViewDelegate
         
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
-        addConstraintsWithFormat(format: "V:|-10-[v0]|", views: collectionView)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
         collectionView.alwaysBounceVertical = true
         collectionView.register(Weather.self, forCellWithReuseIdentifier: cellId)
