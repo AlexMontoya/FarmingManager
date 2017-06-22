@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
 
 class SensorListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -59,7 +60,17 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                     for dictionary in json as! [[String: AnyObject]]
                     {
                         print(dictionary["id"]!)
-                   
+                        
+                        if let id = dictionary["id"]{
+                        
+                        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(id)", headers: headers).responseImage { response in
+
+                            if let image = response.result.value {
+                                print("ton image : \(image)")
+                            }
+                        }
+                        
+                        }
                     }
                 }
             }
@@ -82,7 +93,16 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                     
                     for weather in json as! [[String: AnyObject]]
                     {
-                        print(weather["values"]!)
+                        if let values = weather["values"] as? NSDictionary{
+                        
+                            print(values)
+                            if let wps = values["WPS_AM1_2"]{
+                                print(wps)
+
+                            }
+                            //print(valu)
+
+                        }
                         
                     }
                 }
