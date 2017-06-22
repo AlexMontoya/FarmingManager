@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = CustomTabBarController()
         
         UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 80, green: 167, blue: 194)
-    
+        UINavigationBar.appearance().tintColor = UIColor.white
 
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)

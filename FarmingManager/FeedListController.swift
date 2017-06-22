@@ -103,6 +103,10 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         navigationItem.titleView = titleLabel
         
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        
         navigationController?.navigationBar.isTranslucent = false
         
         /*let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))

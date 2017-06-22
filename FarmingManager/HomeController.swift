@@ -27,7 +27,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Set the map’s center coordinate and zoom level.
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 48.552216, longitude: 3.846474), zoomLevel: 18, animated: false)
         view.addSubview(mapView)
         
         //setupNavBarButtons()
