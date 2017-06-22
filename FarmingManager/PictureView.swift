@@ -27,6 +27,7 @@ class PictureCell: UICollectionViewCell{
         addConstraintsWithFormat(format: "H:|[v0]|", views: CropImageView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: CropImageView)
         
+        
     }
     
     

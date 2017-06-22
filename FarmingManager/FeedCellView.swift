@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
@@ -30,6 +32,8 @@ class BaseCell: UICollectionViewCell {
     
     var feed: Feed? {
         didSet {
+            
+            setupThumbnailImageName()
             
             thumbnailImageView.image = UIImage(named: (feed?.thumbnailImageName)!)
             
@@ -61,9 +65,30 @@ class BaseCell: UICollectionViewCell {
         }
     }
  
+        func setupThumbnailImageName(){
+            
+            if let thumbnailImageNameUrl = feed?.thumbnailImageName {
+                print(thumbnailImageNameUrl)
+                /*
+                let url = NSURL(string: thumbnailImageNameUrl)
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                    
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    
+                    self.thumbnailImageView.image = UIImage(data: data!)
+                    
+                    
+                }).resume()*/
+                
+            }
+        
+        }
+    
 
-    
-    
+
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "2:06-perpendiculaire")
@@ -82,6 +107,7 @@ class BaseCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Humidity"
         label.font = UIFont.systemFont(ofSize: 14)
+        label.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -92,6 +118,7 @@ class BaseCell: UICollectionViewCell {
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.textColor = UIColor.lightGray
+        textView.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -100,6 +127,7 @@ class BaseCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Wind"
         label.font = UIFont.systemFont(ofSize: 14)
+        label.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -110,6 +138,7 @@ class BaseCell: UICollectionViewCell {
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.textColor = UIColor.lightGray
+        textView.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -118,6 +147,7 @@ class BaseCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Temperature"
         label.font = UIFont.systemFont(ofSize: 14)
+        label.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -128,6 +158,7 @@ class BaseCell: UICollectionViewCell {
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.textColor = UIColor.lightGray
+        textView.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()

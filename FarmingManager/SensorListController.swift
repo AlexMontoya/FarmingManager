@@ -9,11 +9,12 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
 
 class SensorListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     
-    var feeds: [Feed] = {
+    /*var feeds: [Feed] = {
      
         var dSchool1 = Feed()
         dSchool1.thumbnailImageName = "2:06-perpendiculaire"
@@ -37,9 +38,9 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         
         return [dSchool1, dSchool2]
         
-    }()
+    }()*/
     
-    //var feeds: [Feed]?
+    var feeds: [Feed]?
     
     func fetchImages() {
         
@@ -56,10 +57,28 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                 
                 if let json = response.result.value {
                     
+                    self.feeds = [Feed]()
+                    
                     for dictionary in json as! [[String: AnyObject]]
                     {
-                        print(dictionary["id"]!)
-                   
+                        //print(dictionary["id"]!)
+                        
+                        if let id = dictionary["id"]{
+                        
+                        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(id)", headers: headers).responseImage { response in
+
+                            if let image = response.result.value {
+                                
+                                let feed = Feed()
+                                feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
+                                self.feeds?.append(feed)
+                                
+                                //print("ton image : \(image)")
+                            }
+                            self.collectionView?.reloadData()
+                        }
+                        
+                        }
                     }
                 }
             }
@@ -82,7 +101,27 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                     
                     for weather in json as! [[String: AnyObject]]
                     {
-                        print(weather["values"]!)
+                        
+                        if let value = weather["values"] as? [String: AnyObject]{
+                        
+                            
+                            //print(values)
+                        
+                            if let soilMoisture = value["WPS_AM1_2"],
+                                let temperature = value["TA_NAMI1_1"],
+                                let soilTemperature = value["TS_AM1_1"],
+                                let airMoisture = value["ARH_NAMI1_1"]{
+                                
+                                print(soilMoisture)
+                                print(temperature)
+                                print(soilTemperature)
+                                print(airMoisture)
+
+                            }
+                            //print(valu)
+
+                        }
+                    
                         
                     }
                 }
@@ -115,7 +154,7 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         navigationItem.titleView = titleLabel*/
         
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         
         collectionView?.register(ImageSensorCell.self, forCellWithReuseIdentifier: "cellId")
         
@@ -142,13 +181,13 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
     
     //Here the number of rows that i could integrate data
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feeds.count
+        return feeds?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! ImageSensorCell
-            cell.feed = feeds[indexPath.item]
+            cell.feed = feeds?[indexPath.item]
         return cell
 
     }

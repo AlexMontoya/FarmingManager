@@ -21,7 +21,7 @@ class ProfileController: UICollectionViewController {
         titleLabel.textAlignment = .center
         navigationItem.titleView = titleLabel
         
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         navigationController?.navigationBar.isTranslucent = false
         
         

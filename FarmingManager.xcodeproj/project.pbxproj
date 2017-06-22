@@ -23,7 +23,7 @@
 		B8D7CF6F1EDCBF2D003A7687 /* FarmingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF6E1EDCBF2D003A7687 /* FarmingManagerTests.swift */; };
 		B8D7CF7A1EDCBF2D003A7687 /* FarmingManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF791EDCBF2D003A7687 /* FarmingManagerUITests.swift */; };
 		B8D7CF881EDCC4CA003A7687 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF871EDCC4CA003A7687 /* CustomTabBarController.swift */; };
-		B8D7CF8A1EDCDD88003A7687 /* FeedListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF891EDCDD88003A7687 /* FeedListController.swift */; };
+		B8D7CF8A1EDCDD88003A7687 /* SensorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7CF891EDCDD88003A7687 /* SensorListController.swift */; };
 		B8DA106A1EFAF4FB00C3AE2F /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */; };
 		B8DEA5461EF01A1C008574A8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEA5451EF01A1B008574A8 /* ImageCell.swift */; };
 		B8DEA5481EF03269008574A8 /* WeatherCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEA5471EF03269008574A8 /* WeatherCellView.swift */; };
@@ -73,7 +73,7 @@
 		B8D7CF791EDCBF2D003A7687 /* FarmingManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingManagerUITests.swift; sourceTree = "<group>"; };
 		B8D7CF7B1EDCBF2D003A7687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D7CF871EDCC4CA003A7687 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		B8D7CF891EDCDD88003A7687 /* FeedListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListController.swift; sourceTree = "<group>"; };
+		B8D7CF891EDCDD88003A7687 /* SensorListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorListController.swift; sourceTree = "<group>"; };
 		B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		B8DEA5451EF01A1B008574A8 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		B8DEA5471EF03269008574A8 /* WeatherCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCellView.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D7CF581EDCBF2C003A7687 /* HomeController.swift */,
-				B8D7CF891EDCDD88003A7687 /* FeedListController.swift */,
+				B8D7CF891EDCDD88003A7687 /* SensorListController.swift */,
 				B8388B791EE1DA2400844472 /* SensorDataController.swift */,
 				B8DEA5491EF03921008574A8 /* WeatherHelperController.swift */,
 				B8C0BD5D1EF952D10039C664 /* ProfileController.swift */,
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D7CF8A1EDCDD88003A7687 /* FeedListController.swift in Sources */,
+				B8D7CF8A1EDCDD88003A7687 /* SensorListController.swift in Sources */,
 				B8C2CD961EE4B67700DE0778 /* FeedCellView.swift in Sources */,
 				B8388B7A1EE1DA2500844472 /* SensorDataController.swift in Sources */,
 				B8C611831EDF091F000485D4 /* UIView+CustomConstraint.swift in Sources */,

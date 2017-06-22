@@ -13,7 +13,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         cv.dataSource = self
         cv.delegate = self
         return cv
