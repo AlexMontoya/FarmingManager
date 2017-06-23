@@ -67,24 +67,10 @@ class BaseCell: UICollectionViewCell {
  
         func setupThumbnailImageName(){
             
-            if let thumbnailImageNameUrl = feed?.thumbnailImageName {
-                print(thumbnailImageNameUrl)
-                /*
-                let url = NSURL(string: thumbnailImageNameUrl)
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                    
-                    if error != nil {
-                        print(error)
-                        return
-                    }
-                    
-                    self.thumbnailImageView.image = UIImage(data: data!)
-                    
-                    
-                }).resume()*/
-                
-            }
-        
+            
+                    self.thumbnailImageView.image = self.feed?.image
+                    self.thumbnailImageView.setNeedsDisplay()
+            
         }
     
 

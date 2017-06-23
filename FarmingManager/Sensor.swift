@@ -58,6 +58,7 @@ class Sensores: NSObject {
 class Feed: NSObject {
     
     var thumbnailImageName: String?
+    var image: UIImage?
     
     var humidityUnit: String?
     var humidityData: NSNumber?

@@ -9,6 +9,8 @@ import Mapbox
 import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    private var mathiasFields: MGLCoordinateBounds!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Set the map’s center coordinate and zoom level.
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 48.552216, longitude: 3.846474), zoomLevel: 18, animated: false)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 48.552216, longitude: 3.846474), zoomLevel: 16, animated: false)
+        
+        let ne = CLLocationCoordinate2D(latitude: 48.7, longitude: 3.9)
+        let sw = CLLocationCoordinate2D(latitude: 47.5, longitude: 3.7)
+        
+        mathiasFields = MGLCoordinateBounds(sw: sw, ne:ne)
+        
         view.addSubview(mapView)
         
         //setupNavBarButtons()

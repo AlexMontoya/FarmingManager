@@ -61,37 +61,36 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                     
                     for dictionary in json as! [[String: AnyObject]]
                     {
-<<<<<<< HEAD:FarmingManager/SensorListController.swift
+
                         print(dictionary["id"]!)
-=======
+
                         //print(dictionary["id"]!)
->>>>>>> UI-Changes:FarmingManager/SensorListController.swift
+
                         
                         if let id = dictionary["id"]{
                         
                         Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(id)", headers: headers).responseImage { response in
 
                             if let image = response.result.value {
-<<<<<<< HEAD:FarmingManager/SensorListController.swift
-                                print("ton image : \(image)")
-                            }
-=======
+                                //print("ton image : \(image)")
+                            
+
                                 
                                 let feed = Feed()
                                 feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
+                                feed.image = image
                                 self.feeds?.append(feed)
                                 
                                 //print("ton image : \(image)")
                             }
                             self.collectionView?.reloadData()
->>>>>>> UI-Changes:FarmingManager/SensorListController.swift
-                        }
-                        
                         }
                     }
                 }
-            }
-            task.resume()
+        }
+        
+    }
+        
     }
     
     func fetchWeather() {
@@ -110,13 +109,13 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                     
                     for weather in json as! [[String: AnyObject]]
                     {
-<<<<<<< HEAD:FarmingManager/SensorListController.swift
+
                         if let values = weather["values"] as? NSDictionary{
                         
                             print(values)
                             if let wps = values["WPS_AM1_2"]{
                                 print(wps)
-=======
+
                         
                         if let value = weather["values"] as? [String: AnyObject]{
                         
@@ -132,23 +131,17 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                                 print(temperature)
                                 print(soilTemperature)
                                 print(airMoisture)
->>>>>>> UI-Changes:FarmingManager/SensorListController.swift
 
+                                    }
+                                }
                             }
-                            //print(valu)
-
                         }
-<<<<<<< HEAD:FarmingManager/SensorListController.swift
-=======
-                    
->>>>>>> UI-Changes:FarmingManager/SensorListController.swift
-                        
+       
                     }
                 }
             }
-            task2.resume()
-        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,8 +175,6 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         
     }
     
-
-
     func setupNavBarButtons() {
         
         let searchImage = UIImage(named: "add")?.withRenderingMode(.alwaysOriginal)
@@ -191,7 +182,6 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         navigationItem.rightBarButtonItems = [searchBarButtonItem]
         
     }
-    
     
     func handleAddSensor() {
         
@@ -230,8 +220,7 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-        
- }
+}
+
 
 

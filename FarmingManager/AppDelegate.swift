@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         //let layout = UICollectionViewFlowLayout()
-        //window?.rootViewController = UINavigationController(rootViewController: SensorDataController(collectionViewLayout: layout))
+        //window?.rootViewController = UINavigationController(rootViewController: ProfileController(collectionViewLayout: layout))
         
         self.window?.rootViewController = CustomTabBarController()
         
