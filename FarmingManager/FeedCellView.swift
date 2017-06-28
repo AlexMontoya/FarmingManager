@@ -75,7 +75,7 @@ class BaseCell: UICollectionViewCell {
 
 
     let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView().configureForAutoLayout()
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "2:06-perpendiculaire")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
