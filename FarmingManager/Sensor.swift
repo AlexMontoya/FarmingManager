@@ -57,6 +57,7 @@ class Sensores: NSObject {
 
 class Feed: NSObject {
     
+    var moduleID:String?
     var thumbnailImageName: String?
     var image: UIImage?
     

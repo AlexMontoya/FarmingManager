@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +34,7 @@ class BaseCell: UICollectionViewCell {
             
             setupThumbnailImageName()
             
-            thumbnailImageView.image = UIImage(named: (feed?.thumbnailImageName)!)
+            thumbnailImageView.image = feed?.image
             
         
             let numberFormatter = NumberFormatter()
@@ -61,6 +60,11 @@ class BaseCell: UICollectionViewCell {
             tempSubLabel.text = tempInformation
             
         }
+            
+            if let t = feed?.tempData{
+            
+                tempSubLabel.text = t.stringValue
+            }
        
         }
     }
@@ -171,7 +175,6 @@ class BaseCell: UICollectionViewCell {
         //vertical constraints
         
         addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(20)]-4-[v2(20)]-16-[v3(1)]|", views: thumbnailImageView, humidityLabel, humiditySubLabel, separatorView)
-        
         
         //top constraint
         addConstraint(NSLayoutConstraint(item: windLabel, attribute: .top, relatedBy: .equal, toItem: thumbnailImageView, attribute: .bottom, multiplier: 1, constant: 8))
