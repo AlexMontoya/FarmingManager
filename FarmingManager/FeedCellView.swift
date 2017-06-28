@@ -60,6 +60,11 @@ class BaseCell: UICollectionViewCell {
             tempSubLabel.text = tempInformation
             
         }
+            
+            if let t = feed?.tempData{
+            
+                tempSubLabel.text = t.stringValue
+            }
        
         }
     }
