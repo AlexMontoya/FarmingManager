@@ -52,7 +52,7 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         
         
-       let task = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images", headers: headers)
+       Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images", headers: headers)
             .responseJSON { response in
                 
                 if let json = response.result.value {
@@ -74,7 +74,6 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                             if let image = response.result.value {
                                 //print("ton image : \(image)")
                             
-
                                 
                                 let feed = Feed()
                                 feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
@@ -102,7 +101,7 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         
         
-        let task2 = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers)
+        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers)
             .responseJSON { response in
                 
                 if let json = response.result.value {
@@ -117,12 +116,16 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                                 print(wps)
 
                         
-                        if let value = weather["values"] as? [String: AnyObject]{
-                        
+                        if let value = weather["values"] as? [String: NSNumber]{
+                            
                             
                             //print(values)
+                            
+                               let feed = Feed()
+                                feed.humidityData = value["WPS_AM1_2"] 
+                                self.feeds?.append(feed)
                         
-                            if let soilMoisture = value["WPS_AM1_2"],
+                           /*if let soilMoisture = value["WPS_AM1_2"],
                                 let temperature = value["TA_NAMI1_1"],
                                 let soilTemperature = value["TS_AM1_1"],
                                 let airMoisture = value["ARH_NAMI1_1"]{
@@ -131,8 +134,8 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                                 print(temperature)
                                 print(soilTemperature)
                                 print(airMoisture)
-
-                                    }
+                                
+                                    }*/
                                 }
                             }
                         }
@@ -147,7 +150,7 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         super.viewDidLoad()
         
         fetchImages()
-        fetchWeather()
+        //fetchWeather()
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "My Sensors"

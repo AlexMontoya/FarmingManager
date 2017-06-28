@@ -31,11 +31,11 @@ class SensorDataController: UICollectionViewController, UICollectionViewDelegate
             flowLayout.minimumLineSpacing = 0
         }
         
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(WeatherCell.self, forCellWithReuseIdentifier: weatherCellId)
-        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView?.isPagingEnabled = true
     }
     
@@ -53,12 +53,12 @@ class SensorDataController: UICollectionViewController, UICollectionViewDelegate
     
     private func setupMenuBar() {
         
-        let redView = UIView()
-        redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
+        let turquoiseView = UIView()
+        turquoiseView.backgroundColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         
-        view.addSubview(redView)
-        view.addConstraintsWithFormat(format: "H:|[v0]|", views: redView)
-        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: redView)
+        view.addSubview(turquoiseView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: turquoiseView)
+        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: turquoiseView)
         
         view.addSubview(menuBar)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarmingManager/ProfileController.swift"
-            timestampString = "519918507.702444"
+            timestampString = "520162644.283758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85">
+            startingLineNumber = "101"
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarmingManager/SensorListController.swift"
-            timestampString = "519924667.645474"
+            timestampString = "520186342.297658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "fetchWeather()"
             landmarkType = "7">
          </BreakpointContent>
@@ -215,54 +215,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FarmingManager/MenuProfile.swift"
-            timestampString = "519923752.142549"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "collectionView"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FarmingManager.MenuProfile.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FarmingManager.MenuProfile&gt;"
-                  moduleName = "FarmingManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexandremontoya/Documents/IOS-App/Bosch/FarmingManager/FarmingManager/MenuProfile.swift"
-                  timestampString = "519920037.964283"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FarmingManager.MenuProfile.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FarmingManager.MenuProfile&gt;"
-                  moduleName = "FarmingManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexandremontoya/Documents/IOS-App/Bosch/FarmingManager/FarmingManager/MenuProfile.swift"
-                  timestampString = "519920038.05221"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FarmingManager/FeedCellView.swift"
             timestampString = "519924860.151236"
             startingColumnNumber = "9223372036854775807"
@@ -271,6 +223,38 @@
             endingLineNumber = "71"
             landmarkName = "setupThumbnailImageName()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FarmingManager/ProfileController.swift"
+            timestampString = "520162644.283758"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setupProfileMenu()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FarmingManager/MenuProfile.swift"
+            timestampString = "520353447.584546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "actionButton"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

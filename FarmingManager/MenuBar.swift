@@ -70,7 +70,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
         
         cell.imageView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
-        cell.tintColor = UIColor.rgb(red: 91, green: 14, blue: 13)
+        cell.tintColor = UIColor.rgb(red: 28, green: 100, blue: 107)
         return cell
     }
     
@@ -102,13 +102,13 @@ class MenuCell: BaseCell {
     
     override var isHighlighted: Bool {
         didSet {
-            imageView.tintColor = isHighlighted ? UIColor.white : UIColor.rgb(red: 91, green: 14, blue: 13)
+            imageView.tintColor = isHighlighted ? UIColor.rgb(red: 235, green: 240, blue: 245) : UIColor.rgb(red: 28, green: 100, blue: 107)
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            imageView.tintColor = isSelected ? UIColor.white : UIColor.rgb(red: 91, green: 14, blue: 13)
+            imageView.tintColor = isSelected ? UIColor.rgb(red: 235, green: 240, blue: 245) : UIColor.rgb(red: 28, green: 100, blue: 107)
         }
     }
     

@@ -10,6 +10,7 @@
 		64C9900373C85FB0387ACC30 /* Pods_FarmingManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9CBD3B756E2DCFE75C41A1 /* Pods_FarmingManager.framework */; };
 		B8388B7A1EE1DA2500844472 /* SensorDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8388B791EE1DA2400844472 /* SensorDataController.swift */; };
 		B878D49B1EEEC93E00D9E232 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878D49A1EEEC93E00D9E232 /* PictureView.swift */; };
+		B8A8C2561F03F3C300DB8E69 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8C2551F03F3C300DB8E69 /* GradientLayer.swift */; };
 		B8C0BD5E1EF952D10039C664 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C0BD5D1EF952D10039C664 /* ProfileController.swift */; };
 		B8C2CD961EE4B67700DE0778 /* FeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CD951EE4B67700DE0778 /* FeedCellView.swift */; };
 		B8C2CD9A1EE4E58700DE0778 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CD991EE4E58700DE0778 /* MenuBar.swift */; };
@@ -55,6 +56,7 @@
 		9F25185C689A7D1C8658C0B7 /* Pods-FarmingManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmingManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-FarmingManager/Pods-FarmingManager.release.xcconfig"; sourceTree = "<group>"; };
 		B8388B791EE1DA2400844472 /* SensorDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataController.swift; sourceTree = "<group>"; };
 		B878D49A1EEEC93E00D9E232 /* PictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
+		B8A8C2551F03F3C300DB8E69 /* GradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		B8C0BD5D1EF952D10039C664 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		B8C2CD951EE4B67700DE0778 /* FeedCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCellView.swift; sourceTree = "<group>"; };
 		B8C2CD991EE4E58700DE0778 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				B8C611821EDF091F000485D4 /* UIView+CustomConstraint.swift */,
 				B8DA10691EFAF4FB00C3AE2F /* UIColor+rgb.swift */,
+				B8A8C2551F03F3C300DB8E69 /* GradientLayer.swift */,
 				B8C6118C1EDF3427000485D4 /* Model */,
 				B8C6118A1EDF1EB5000485D4 /* Assets.xcassets */,
 				B8D7CF561EDCBF2C003A7687 /* AppDelegate.swift */,
@@ -425,6 +428,7 @@
 				B8DEA5461EF01A1C008574A8 /* ImageCell.swift in Sources */,
 				B8C2CD9A1EE4E58700DE0778 /* MenuBar.swift in Sources */,
 				B8D7CF591EDCBF2C003A7687 /* HomeController.swift in Sources */,
+				B8A8C2561F03F3C300DB8E69 /* GradientLayer.swift in Sources */,
 				B878D49B1EEEC93E00D9E232 /* PictureView.swift in Sources */,
 				B8D7CF881EDCC4CA003A7687 /* CustomTabBarController.swift in Sources */,
 				B8D333411EFD55A9006A4274 /* MenuProfile.swift in Sources */,
