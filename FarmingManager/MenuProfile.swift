@@ -65,7 +65,7 @@ class MenuProfile: UIView, UICollectionViewDataSource, UICollectionViewDelegate,
         let profileImageView: UIImageView = {
         let imageView = UIImageView()
             imageView.image = UIImage(named: "Mathias")
-            imageView.layer.cornerRadius = 40
+            imageView.layer.cornerRadius = 55
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
 
@@ -104,8 +104,8 @@ class MenuProfile: UIView, UICollectionViewDataSource, UICollectionViewDelegate,
             addConstraint(NSLayoutConstraint(item: profileName, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             addConstraint(NSLayoutConstraint(item: actionButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             
-            addConstraintsWithFormat(format: "H:[v0(80)]", views: profileImageView)
-            addConstraintsWithFormat(format: "V:|-10-[v0(80)]-20-[v1(20)]-10-[v2(20)]", views: profileImageView, profileName, actionButton)
+            addConstraintsWithFormat(format: "H:[v0(110)]", views: profileImageView)
+            addConstraintsWithFormat(format: "V:|[v0(110)]-20-[v1(20)]-10-[v2(20)]", views: profileImageView, profileName, actionButton)
             
             addConstraintsWithFormat(format: "H:[v0(200)]", views: profileName)
             

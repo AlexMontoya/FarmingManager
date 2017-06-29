@@ -56,61 +56,31 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         
 
         if let id = feed.moduleID{
-            let task = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/\(id)/images", headers: headers)
-                .responseJSON { response in
-                    
-                    if let json = response.result.value {
-                        
-                        if let json = json as? [[String: AnyObject]]{
-                            
-<<<<<<< HEAD
-=======
-                            if let first = json.first?["id"]{
+            
+            Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/\(id)/images", headers: headers).responseJSON { response in
+            
+            if let json = response.result.value {
+            
+            if let json = json as? [[String: AnyObject]]{
+            
+            if let first = json.first?["id"]{
+
+        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(first)", headers: headers).responseImage { response in
+            if let image = response.result.value {
+                //print("ton image : \(image)")
+                feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
+                feed.image = image
+                //print("ton image : \(image)")
+                self.collectionView?.reloadData()
                                 
-                                Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(first)", headers: headers).responseImage { response in
-                                    
-                                    if let image = response.result.value {
-                                        //print("ton image : \(image)")
-                                        
-                                        feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
-                                        feed.image = image
-                                        
-                                        //print("ton image : \(image)")
-                                        self.collectionView?.reloadData()
-                                        
-                                    }
-                                }
->>>>>>> origin/master
+                    }
+                }
                                 
                                 
                             }
                             
                         }
                         
-                        //                    let first = json.
-                        //                    for dictionary in json as! [[String: AnyObject]]
-                        //                    {
-                        //
-                        //                        print(dictionary["id"]!)
-                        //
-                        //                        //print(dictionary["id"]!)
-                        //
-                        //
-                        //                        if let id = dictionary["id"]{
-                        //
-                        //                        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/images/\(id)", headers: headers).responseImage { response in
-                        //
-                        //                            if let image = response.result.value {
-                        //                                //print("ton image : \(image)")
-                        //
-                        //                                feed.thumbnailImageName = ("594b2e161402020010582ebe : \(image)")
-                        //                                feed.image = image
-                        //
-                        //                                //print("ton image : \(image)")
-                        //                            }
-                        //                            self.collectionView?.reloadData()
-                        //                        }
-                        //                    }
                     }
                     
 
@@ -134,50 +104,43 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         
         
-<<<<<<< HEAD
-        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/10359316077825617/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers)
-=======
         if let id = feed.moduleID{
 
-        let task2 = Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/\(id)/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers)
->>>>>>> origin/master
-            .responseJSON { response in
+        Alamofire.request("http://pa.apps.bosch-iot-cloud.com/api/v1/modules/\(id)/history?start=2017-06-1T10:45:27.00Z&end=2020-01-1T10:45:26.00Z", headers: headers).responseJSON { response in
                 
                 if let json = response.result.value {
                     
-                    for weather in json as! [[String: AnyObject]]
-                    {
+                    if let weather = json as? [[String: AnyObject]]{
                         
-                        if let values = weather["values"] as? NSDictionary{
+                        if let last = weather.last?["values"]{
+                            print(last)
+                    
+                            
+                            if let soilMoisture = last["WPS_AM1_2"],
+                                let temperature = last["TA_NAMI1_1"],
+                                let soilTemperature = last["TS_AM1_1"],
+                                let airMoisture = last["ARH_NAMI1_1"]{
+                                
+                                print(soilMoisture as Any)
+                                print(temperature as Any)
+                                print(soilTemperature as Any)
+                                print(airMoisture as Any)
+                                
+                                if let t = temperature as? NSNumber{
+                                    feed.tempData = t
+                                    
+                                // On prend juste une temperature et on sort
+                                return
+                            
+                            }
+                            }
+                        
+                        /*for values in weather["values"] as? NSDictionary {
                             
                             print(values)
                             if let wps = values["WPS_AM1_2"]{
                                 print(wps)
-<<<<<<< HEAD
-
-                        
-                        if let value = weather["values"] as? [String: NSNumber]{
                             
-                            
-                            //print(values)
-                            
-                               let feed = Feed()
-                                feed.humidityData = value["WPS_AM1_2"] 
-                                self.feeds?.append(feed)
-                        
-                           /*if let soilMoisture = value["WPS_AM1_2"],
-                                let temperature = value["TA_NAMI1_1"],
-                                let soilTemperature = value["TS_AM1_1"],
-                                let airMoisture = value["ARH_NAMI1_1"]{
-                                
-                                print(soilMoisture)
-                                print(temperature)
-                                print(soilTemperature)
-                                print(airMoisture)
-                                
-                                    }*/
-=======
-                                
                                 
                                 if let value = weather["values"] as? [String: AnyObject]{
                                     
@@ -199,27 +162,22 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
                                             
                                             // On prend juste une temperature et on sort
                                             return
+                                            }
                                         }
-                                        
                                     }
->>>>>>> origin/master
                                 }
-                            }
+                            }*/
                         }
                     }
-                    }
                 }
+            }
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
-        fetchImages()
-        //fetchWeather()
-=======
+
         self.feeds = [Feed]()
         
         for i in sensorsID{
@@ -231,17 +189,19 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
             fetchWeather(feed: f)
         }
         
->>>>>>> origin/master
+
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "My Sensors"
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         navigationItem.titleView = titleLabel
         
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
         
+        self.navigationController?.navigationBar.tintColor = UIColor.rgb(red: 235, green: 240, blue: 245)
         
         navigationController?.navigationBar.isTranslucent = false
         
@@ -262,6 +222,8 @@ class SensorListController: UICollectionViewController, UICollectionViewDelegate
     func setupNavBarButtons() {
         
         let searchImage = UIImage(named: "add")?.withRenderingMode(.alwaysOriginal)
+        
+        
         let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleAddSensor))
         navigationItem.rightBarButtonItems = [searchBarButtonItem]
         

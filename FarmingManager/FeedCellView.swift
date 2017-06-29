@@ -61,9 +61,9 @@ class BaseCell: UICollectionViewCell {
             
         }
             
-            if let t = feed?.tempData{
+            if let t = feed?.tempData {
             
-                tempSubLabel.text = t.stringValue
+                tempSubLabel.text = (t.stringValue)
             }
        
         }
@@ -72,7 +72,7 @@ class BaseCell: UICollectionViewCell {
         func setupThumbnailImageName(){
             
             
-                    self.thumbnailImageView.image = self.feed?.image
+                    thumbnailImageView.image = feed?.image
                     self.thumbnailImageView.setNeedsDisplay()
             
         }

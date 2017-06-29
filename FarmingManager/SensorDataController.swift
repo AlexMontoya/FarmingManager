@@ -35,7 +35,7 @@ class SensorDataController: UICollectionViewController, UICollectionViewDelegate
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(WeatherCell.self, forCellWithReuseIdentifier: weatherCellId)
-        collectionView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         collectionView?.isPagingEnabled = true
     }
     

@@ -20,7 +20,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
             titleLabel.text = "My Fields"
-            titleLabel.textColor = UIColor.white
+            titleLabel.textColor = UIColor.rgb(red: 235, green: 240, blue: 245)
             titleLabel.font = UIFont.systemFont(ofSize: 18)
             titleLabel.textAlignment = .center
             navigationItem.titleView = titleLabel
